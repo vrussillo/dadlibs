@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, session, url_for
 from flask_debugtoolbar import DebugToolbarExtension
 from stories import stories
 
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = "dankvibesbro"
+app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 
 debug = DebugToolbarExtension(app)
 
